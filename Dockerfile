@@ -14,7 +14,7 @@ COPY app.go .
 
 # Construindo a aplicação Go para Linux
 # 'scratch' é uma distribuição Linux
-RUN GOOS=linux go build ./app.go
+RUN GOOS=linux go build -ldflags "-s -w" ./app.go
 
 ######################################################
 # Definindo a imagem de execução                     #
